@@ -7,7 +7,7 @@
   "ApplicableVersion": "any",
   "AssemblyVersion": "1.0.0.0",
   "RepoUrl": "https://github.com/XIV-Tools/FullscreenToggle",
-  "IconUrl": "https://github.com/XIV-Tools/FullscreenToggle/raw/master/images/icon.png",
+  "IconUrl": "https://github.com/XIV-Tools/FullscreenToggle/raw/main/Data/icon.png",
   "Tags": [
     "fullscreen",
     "XIV Tools"
