@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Authors></Authors>
@@ -6,8 +6,8 @@
     <Version>1.0.0.0</Version>
     <Description>FullscreenToggle</Description>
     <Copyright></Copyright>
-    <PackageProjectUrl>https://github.com/XIV-Tools/CustomizePlus</PackageProjectUrl>
-	  <UseWindowsForms>true</UseWindowsForms>
+    <PackageProjectUrl>https://github.com/XIV-Tools/FullscreenToggle</PackageProjectUrl>
+      <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -18,11 +18,12 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <OutputPath>$(AppData)\XIVLauncher\devPlugins\FullscreenToggle\</OutputPath>
+    <!-- >OutputPath>$(AppData)\XIVLauncher\devPlugins\FullscreenToggle\</OutputPath-->
   </PropertyGroup>
 
   <ItemGroup>
     <Content Include="..\Data\icon.png">
+      <Link>images/icon.png</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Visible>false</Visible>
     </Content>
@@ -43,12 +44,6 @@
       <HintPath>$(DalamudLibPath)Dalamud.dll</HintPath>
       <Private>false</Private>
     </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-	  <None Update="FullscreenToggle.json">
-		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	  </None>
   </ItemGroup>
 
 </Project>
