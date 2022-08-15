@@ -32,7 +32,7 @@ jobs:
     - name: Zip Release
       uses: TheDoctor0/zip-release@0.6.0
       with:
-        filename: './Plugin.zip'
+        filename: '../Plugin.zip'
         directory: './bin/x64/Debug/'
         exclusions: '*.pdb* *.xml*'
         
