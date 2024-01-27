@@ -1,50 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Authors></Authors>
-    <Company></Company>
-    <Version>1.0.1.0</Version>
-    <Description>FullscreenToggle</Description>
-    <Copyright></Copyright>
-    <PackageProjectUrl>https://github.com/XIV-Tools/FullscreenToggle</PackageProjectUrl>
-    <UseWindowsForms>false</UseWindowsForms>
+	<Authors></Authors>
+	<Company></Company>
+	<Version>1.0.1.0</Version>
+	<Description>FullscreenToggle</Description>
+	<Copyright></Copyright>
+	<PackageProjectUrl>https://github.com/XIV-Tools/FullscreenToggle</PackageProjectUrl>
+	<UseWindowsForms>false</UseWindowsForms>
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <Platforms>x64</Platforms>
-    <Nullable>enable</Nullable>
-    <LangVersion>latest</LangVersion>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
-    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <!-- >OutputPath>$(AppData)\XIVLauncher\devPlugins\FullscreenToggle\</OutputPath-->
+	<TargetFramework>net7.0-windows</TargetFramework>
+	<Platforms>x64</Platforms>
+	<Nullable>enable</Nullable>
+	<LangVersion>latest</LangVersion>
+	<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	<ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+	<!-- >OutputPath>$(AppData)\XIVLauncher\devPlugins\FullscreenToggle\</OutputPath-->
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="..\Data\icon.png">
-      <Link>images/icon.png</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Visible>false</Visible>
-    </Content>
+	<Content Include="..\Data\icon.png">
+	  <Link>images/icon.png</Link>
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  <Visible>false</Visible>
+	</Content>
   </ItemGroup>
 
   <PropertyGroup>
-    <DalamudLibPath>$(appdata)\XIVLauncher\addon\Hooks\dev\</DalamudLibPath>
-    <GenerateDocumentationFile>False</GenerateDocumentationFile>
-    <BaseOutputPath>..\bin\</BaseOutputPath>
+	<DalamudLibPath>$(appdata)\XIVLauncher\addon\Hooks\dev\</DalamudLibPath>
+	<GenerateDocumentationFile>False</GenerateDocumentationFile>
+	<BaseOutputPath>..\bin\</BaseOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DalamudPackager" Version="2.1.8" />
-    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <Reference Include="Dalamud">
-      <HintPath>$(DalamudLibPath)Dalamud.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
+	<PackageReference Include="DalamudPackager" Version="2.1.12" />
+	<PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+	  <PrivateAssets>all</PrivateAssets>
+	  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	</PackageReference>
+	<Reference Include="Dalamud">
+	  <HintPath>$(DalamudLibPath)Dalamud.dll</HintPath>
+	  <Private>false</Private>
+	</Reference>
   </ItemGroup>
 
 </Project>

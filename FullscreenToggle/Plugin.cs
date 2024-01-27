@@ -10,6 +10,7 @@ using Dalamud.Game;
 using Dalamud.IoC;
 using Dalamud.Logging;
 using Dalamud.Plugin;
+using Dalamud.Plugin.Services;
 
 public sealed class Plugin : IDalamudPlugin
 {
@@ -34,11 +35,12 @@ public sealed class Plugin : IDalamudPlugin
 		}
 		catch (Exception ex)
 		{
-			PluginLog.Error(ex, "Error instantiating plugin");
+			Log.Error(ex, "Error instantiating plugin");
 		}
 	}
 
-	[PluginService][RequiredVersion("1.0")] public static Framework Framework { get; private set; } = null!;
+	[PluginService][RequiredVersion("1.0")] public static IFramework Framework { get; private set; } = null!;
+	[PluginService][RequiredVersion("1.0")] public static IPluginLog Log { get; private set; } = null!;
 
 	public string Name => "Fullscreen Toggle";
 
@@ -63,7 +65,7 @@ public sealed class Plugin : IDalamudPlugin
 
 	public void Borderless()
 	{
-		PluginLog.Information("Swap to borderless");
+		Log.Information("Swap to borderless");
 		int style = GetWindowLong(this.wnd, GwlStyle);
 		SetWindowLong(this.wnd, GwlStyle, style & ~WsCaption);
 		ShowWindow(this.wnd, 3);
@@ -71,7 +73,7 @@ public sealed class Plugin : IDalamudPlugin
 
 	public void Windowed()
 	{
-		PluginLog.Information("Swap to windowed");
+		Log.Information("Swap to windowed");
 		int style = GetWindowLong(this.wnd, GwlStyle);
 		SetWindowLong(this.wnd, GwlStyle, style | WsCaption);
 		ShowWindow(this.wnd, 9);
@@ -95,7 +97,7 @@ public sealed class Plugin : IDalamudPlugin
 	[DllImport("user32.dll")]
 	private static extern short GetKeyState(int nVirtKey);
 
-	private void OnUpdate(Framework framework)
+	private void OnUpdate(IFramework framework)
 	{
 		IntPtr foregroundWnd = GetForegroundWindow();
 
